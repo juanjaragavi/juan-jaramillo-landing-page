@@ -1,44 +1,17 @@
-# Astro Landing Page <picture><source media="(prefers-color-scheme: dark)" srcset="https://astro.build/assets/press/astro-icon-light.png"><source media="(prefers-color-scheme: light)" srcset="https://astro.build/assets/press/astro-icon-dark.png"><img align="right" valign="center" height="79" width="63" src="https://astro.build/assets/press/astro-icon-dark.png" alt="Astro logo" /></picture>
+# Hi! I'm Juan Jaramillo
 
-> An Astro + Tailwind CSS example/template for landing pages.
+I am a Prompt Engineer, AI Expert and Full-Stack Developer who is currently based in Bogotá, Colombia. I am ready to turn your Artificial Intelligence project into Reality!.
 
-<div align="center">
+## 👨🏻‍💻 About Me:
 
-[![Built with Astro](https://astro.badg.es/v2/built-with-astro/small.svg)](https://astro.build)
+I am Juan Jaramillo, an Artificial Intelligence expert with more than 16 years of experience in digital and technology projects. I have worked as a front-end and back-end developer, consultant and digital marketing specialist, collaborating with companies such as Coca-Cola FEMSA, Grupo Herdez and El Corte Inglés. I have also co-founded technology startups and coordinated development teams for web projects and applications.
 
-</div>
+[![virtual-cv-eng](https://media.juanjaramillo.tech/og-image.webp)](https://juanjaramillo.tech)
 
-![Screenshots of Astro Landing Page](screenshots.jpg)
+## 👀 Want to learn more?
 
-## Features
+Feel free to check my [LinkedIn Profile](https://www.linkedin.com/in/juan-jaramillo-ai/) (it won't too shabby if you follow me 😉), or add me to [WhatsApp](https://wa.link/mal08v), so we can have a Chat. 
 
-- 💨 Tailwind CSS for styling
-- 🎨 Themeable
-  - CSS variables are defined in `src/styles/theme.css` and mapped to Tailwind classes (`tailwind.config.cjs`)
-- 🌙 Dark mode
-- 📱 Responsive (layout, images, typography)
-- ♿ Accessible (as measured by https://web.dev/measure/)
-- 🔎 SEO-enabled (as measured by https://web.dev/measure/)
-- 🔗 Open Graph tags for social media sharing
-- 💅 [Prettier](https://prettier.io/) setup for both [Astro](https://github.com/withastro/prettier-plugin-astro) and [Tailwind](https://github.com/tailwindlabs/prettier-plugin-tailwindcss)
+## Thanks for Watching! 🙋🏻‍♂️
 
-## Commands
-
-| Command                | Action                                            |
-| :--------------------- | :------------------------------------------------ |
-| `npm install`          | Install dependencies                              |
-| `npm run dev`          | Start local dev server at `localhost:4321`        |
-| `npm run build`        | Build your production site to `./dist/`           |
-| `npm run preview`      | Preview your build locally, before deploying      |
-| `npm run astro ...`    | Run CLI commands like `astro add`, `astro check`  |
-| `npm run astro --help` | Get help using the Astro CLI                      |
-| `npm run format`       | Format code with [Prettier](https://prettier.io/) |
-| `npm run clean`        | Remove `node_modules` and build output            |
-
-## Credits
-
-- astronaut image
-  - source: https://github.com/withastro/astro-og-image; note: this repo is not available anymore
-- moon image
-  - source: https://unsplash.com/@nasa
-- other than that, a lot of material (showcase data, copy) was taken from official Astro sources, in particular https://astro.build/blog/introducing-astro/ and https://github.com/withastro/astro.build
+![Thanks for Watching, High Five!](https://content.codecademy.com/courses/learn-cpp/community-challenge/highfive.gif 'Thanks for Watching, High Five!')
