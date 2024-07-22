@@ -1,0 +1,140 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<form
+    action="https://api.web3forms.com/submit"
+    method="POST"
+    id="form"
+    class="needs-validation"
+    novalidate
+    >
+    <input
+        type="hidden"
+        name="access_key"
+        value="6ec88154-3bcd-4ee1-b440-1f075efeec28"
+    />
+    <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
+    <div class="mb-5">
+        <input
+        type="text"
+        placeholder="Nombre Completo"
+        required
+        class="w-full border-2 border-gray-300 bg-transparent px-4 py-3 outline-none placeholder:text-white focus:border-secondary focus:ring-4"
+        name="name"
+        />
+        <div class="empty-feedback invalid-feedback mt-1 text-red-400 text-sm">
+        Escribe tu Nombre Completo.
+        </div>
+    </div>
+    <div class="mb-5">
+        <label for="email_address" class="sr-only">Correo Electrónico</label><input
+        id="email_address"
+        type="email"
+        placeholder="Correo Electrónico"
+        name="email"
+        required
+        class="w-full border-2 border-gray-300 bg-transparent px-4 py-3 outline-none placeholder:text-white focus:border-secondary focus:ring-4"
+        />
+        <div class="empty-feedback mt-1 text-red-400 text-sm">
+        Escribe tu Correo Electrónico.
+        </div>
+        <div class="invalid-feedback mt-1 text-red-400 text-sm">
+        Escribe un Correo Electrónico Válido.
+        </div>
+    </div>
+    <div class="mb-5">
+        <label for="phone" class="sr-only">Teléfono</label><input
+        id="phone"
+        type="tel"
+        placeholder="Teléfono"
+        name="phone"
+        required
+        class="w-full border-2 border-gray-300 bg-transparent px-4 py-3 outline-none placeholder:text-white focus:border-secondary focus:ring-4"
+        />
+        <div class="empty-feedback mt-1 text-red-400 text-sm">
+        Escribe tu Número de Teléfono.
+        </div>
+        <div class="invalid-feedback mt-1 text-red-400 text-sm">
+        Escribe un Número de Teléfono Válido.
+        </div>
+    </div>
+    <button
+        type="submit"
+        class="flex items-center justify-center gap-3 border-2 border-secondary bg-zinc-100 px-10 py-4 transition-all duration-200 ease-in-out hover:bg-transparent"
+    >
+        <Icon name="mdi:download" class="size-8 text-secondary" />
+        <span class="text-secondary">Descarga tu PDF</span>
+    </button>
+    <div id="result" class="mt-3 text-center"></div>
+    </form>
+
+    <style>
+    .invalid-feedback,
+    .empty-feedback {
+        display: none;
+    }
+
+    .was-validated :placeholder-shown:invalid ~ .empty-feedback {
+        display: block;
+    }
+
+    .was-validated :not(:placeholder-shown):invalid ~ .invalid-feedback {
+        display: block;
+    }
+
+    .is-invalid,
+    .was-validated :invalid {
+        border-color: #dc3545;
+    }
+    </style>
+
+    <script is:inline>
+    const form = document.getElementById("form");
+    const result = document.getElementById("result");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        form.classList.add("was-validated");
+        if (!form.checkValidity()) {
+        form.querySelectorAll(":invalid")[0].focus();
+        return;
+        }
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        result.innerHTML = "Enviando...";
+
+        fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+        },
+        body: json,
+        })
+        .then(async (response) => {
+            let json = await response.json();
+            if (response.status == 200) {
+            result.classList.add("text-green-500");
+            result.innerHTML = json.message;
+            } else {
+            console.log(response);
+            result.classList.add("text-red-500");
+            result.innerHTML = json.message;
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+            result.innerHTML = "Algo ha salido mal. Por favor, vuelve a intentar.";
+        })
+        .then(function () {
+            form.reset();
+            form.classList.remove("was-validated");
+            setTimeout(() => {
+            result.style.display = "none";
+            }, 5000);
+        });
+    });
+</script>
