@@ -119,6 +119,9 @@ import { Icon } from "astro-icon/components";
             if (response.status == 200) {
             result.classList.add("text-green-500");
             result.innerHTML = json.message;
+            setTimeout(() => {
+                window.open("https://media.juanjaramillo.tech/herramientas-de-ia-generativa-para-la-optimizacion-de-la-productividad-juan-jaramillo.pdf", "_blank");
+            }, 500);
             } else {
             console.log(response);
             result.classList.add("text-red-500");
